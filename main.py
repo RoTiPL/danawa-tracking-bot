@@ -2,8 +2,8 @@ import time
 from googleapi import *
 from danawatracker import danawa_crawler
 from datetime import datetime
+from user import *
 
-SPREADSHEET_ID = "" # Write the Google Spreadsheet ID
 
 if __name__ == '__main__':
     today_date = datetime.today().strftime("%Y%m%d")
@@ -40,5 +40,5 @@ if __name__ == '__main__':
         ["\t".join(lst) for lst in message_list]
     )
     print(message_text)
-    message = create_message('Sender Email', 'Receiver Email', today_date, message_text)
+    message = create_message(SEND_EMAIL, RECEIVE_EMAIL, today_date, message_text)
     send_message(gmail_service, 'me', message)
