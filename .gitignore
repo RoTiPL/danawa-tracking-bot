@@ -1,0 +1,8 @@
+# python environment for vscode
+__pycache__
+.venv
+.vscode
+
+# google api privacy
+credentials.json
+token.pickle
